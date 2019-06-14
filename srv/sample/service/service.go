@@ -22,7 +22,7 @@ func RunService(ctx context.Context, test bool) {
 		reader := rand.Reader
 		rsp, _ := rand.Int(reader, big.NewInt(1000))
 		fmt.Printf("Using port %v\n", rsp)
-		port = 1024 + 4 + rsp.Int64()
+		port = 1024 + rsp.Int64()
 	}
 
 	service := micro.NewService(
